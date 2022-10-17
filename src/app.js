@@ -3,6 +3,7 @@ const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const io = require('socket.io')(server);
+const fs = require('fs');
 const PORT = 3025;
 
 app.get('/', (req, res) => {
