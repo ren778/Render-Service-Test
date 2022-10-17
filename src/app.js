@@ -6,7 +6,7 @@ const io = require('socket.io')(server);
 const PORT = 8080;
 
 app.get('/', (req, res) => {
-	res.send('Hello World');
+	res.sendFile(__dirname + '/index.html');
 });
 
 server.listen(PORT, () => {
