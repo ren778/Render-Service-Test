@@ -3,10 +3,16 @@ const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const io = require('socket.io')(server);
-const PORT = 8080;
+const PORT = 3025;
 
 app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/index.html');
+});
+
+io.on('connection', (socket) => {
+	socket.on('send', (username, message) => {
+
+	});
 });
 
 server.listen(PORT, () => {
