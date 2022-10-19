@@ -6,9 +6,7 @@ const io = require('socket.io')(server);
 const fs = require('fs');
 const PORT = 3025;
 
-app.get('/', (req, res) => {
-	res.sendFile(__dirname + '/index.html');
-});
+app.use(express.static(__dirname + '/web'));
 
 io.on('connection', (socket) => {
 	socket.on('send', (username, message) => {
